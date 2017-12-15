@@ -1,6 +1,5 @@
 import binascii
 import base64
-import pyDes
 import sys
 from tkinter import *
 from tkinter import messagebox
