@@ -599,6 +599,8 @@ def padding(key,length):
 
 
 def encrypt(iv,key,data):
+	#root.dec.delete('1.0', END)
+	print("About to print data")
 	print(data)
 	length=len(key)
 	#print(length)
@@ -610,11 +612,14 @@ def encrypt(iv,key,data):
 	k = des(key_c, CBC, iv, pad=None, padmode=PAD_PKCS5)   #encryption function
 	d = k.encrypt(data)
 	d = base64.encodestring(d) #Encode the string to ASCII
+	print("printing encrypted data")
 	print(d)
+	root.dec.delete(0,END)
 	root.dec.insert(END,d)
 
 
 def decrypt(iv,key,data):
+	
 	length=len(key)
 	#print(length)
 	key = padding(key,length)
@@ -627,6 +632,7 @@ def decrypt(iv,key,data):
 	d = k.decrypt(data)
 
 	if(d):
+		
 		print(d)
 		root.dec.insert(END,d)
 	elif(d!=0):
@@ -654,7 +660,7 @@ root.title("Encrypto")
 
 
 #for text
-root.label1 = Label(root, text="Plain/Encrypted:")
+root.label1 = Label(root, text="Plain | Encrypted:")
 root.text = StringVar()
 root.text = Entry(root, textvariable=root.text)
 
