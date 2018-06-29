@@ -9,7 +9,7 @@ from tkinter import scrolledtext
 
 import sys
 
-# _pythonMajorVersion is used to handle Python2 and Python3 differences.
+# _pythonMajorVersion is used to handle Python2 and Python3 version differences.
 #but this program will mainly focuse on python2 only because decryption include a functionconvertion from hexa to ascii 
 #punkboy was here
 
